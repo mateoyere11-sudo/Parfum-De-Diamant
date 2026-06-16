@@ -104,6 +104,40 @@ main h1 {
     padding: 30px;
 }
 
+.imgs_compr {
+    display: flex;
+    width: 600px;
+    height: 400px;
+    gap: 10px;
+    justify-self: center;
+}
+
+.card {
+    flex: 1;
+    border-radius: 20px;
+    cursor: pointer;
+    background: black;
+    filter: grayscale(80%);
+    transition: flex .7s cubic-bezier(.25, 1, .5, 1);
+}
+
+.img1 {
+    background: url(/imagenes/optimizadas/versace_eros.webp) center/cover;
+}
+
+.img2 {
+    background: url(/imagenes/optimizadas/one_million_2.webp) center/cover;
+}
+
+.img3 {
+    background: url(/imagenes/optimizadas/moschino_toy\ boy.webp) center/cover;
+}
+
+.card:hover {
+    flex: 4;
+    filter: grayscale(0%);
+}
+
 body.modo-oscuro #header {
     background-color: #1E1A14;
 }
