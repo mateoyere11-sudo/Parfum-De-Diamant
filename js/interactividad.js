@@ -21,3 +21,23 @@ const observ = new IntersectionObserver((entries) => {
 }, { threshold: 0.2 });
 
 document.querySelectorAll('.descripcion_principal .ds_izq, .descripcion_principal .ds_der').forEach(el => observ.observe(el));
+
+
+// btn para subir arriba
+
+const btn_sb = document.getElementById("backtotop");
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+        btn_sb.classList.add('visible')
+    } else {
+        btn_sb.classList.remove('visible')
+    }
+});
+
+btn_sb.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+});
