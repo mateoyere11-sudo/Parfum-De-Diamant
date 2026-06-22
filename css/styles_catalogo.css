@@ -1,0 +1,703 @@
+@import url('../css/style.css');
+
+/* ---------- NAV: enlace activo ---------- */
+.nav-active {
+  color: #D4AF72 !important;
+}
+
+/* ---------- HERO DEL CATÁLOGO ---------- */
+.cat-hero {
+  padding-top: 30px;
+}
+
+.cat-eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #8C7B6E;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.cat-hero-stage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  flex: 1;
+}
+
+.bottle-hero {
+  position: relative;
+  z-index: 2;
+  width: 90px;
+  filter: drop-shadow(0 12px 20px rgba(212, 175, 114, 0.35));
+}
+
+/* Ripples del hero */
+.ripple {
+  position: absolute;
+  border: 1px solid #D4AF72;
+  border-radius: 50%;
+  opacity: 0;
+  animation: ripple 4.2s ease-out infinite;
+}
+
+.ripple.r2 {
+  animation-delay: 1.4s;
+  border-color: #8C7B6E;
+}
+
+.ripple.r3 {
+  animation-delay: 2.8s;
+  border-color: #C9A227;
+}
+
+@keyframes ripple {
+  0% {
+    width: 30px;
+    height: 30px;
+    opacity: 0.65;
+  }
+
+  100% {
+    width: 230px;
+    height: 230px;
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ripple {
+    animation: none;
+    display: none;
+  }
+}
+
+/* ---------- CONTROLES (barra sticky) ---------- */
+.cat-controls {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(26, 20, 16, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #2e2318;
+  padding: 0.9rem 1.5rem;
+}
+
+.cat-controls-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  align-items: center;
+}
+
+/* Buscador */
+.cat-search-wrap {
+  position: relative;
+  flex: 1 1 220px;
+}
+
+.cat-search-wrap input {
+  width: 100%;
+  padding: 0.65rem 1rem 0.65rem 2.4rem;
+  background: #2a1f16;
+  border: 1px solid #3d2e20;
+  border-radius: 999px;
+  color: #FAF7F2;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  transition: border-color 0.25s;
+}
+
+.cat-search-wrap input:focus {
+  outline: none;
+  border-color: #D4AF72;
+}
+
+.cat-search-wrap input::placeholder {
+  color: #8C7B6E;
+}
+
+.cat-search-wrap svg {
+  position: absolute;
+  left: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  stroke: #8C7B6E;
+}
+
+/* Pills de filtro */
+.cat-pills {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.cat-pill {
+  border: 1px solid #3d2e20;
+  background: transparent;
+  color: #8C7B6E;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+
+.cat-pill:hover {
+  border-color: #D4AF72;
+  color: #FAF7F2;
+}
+
+.cat-pill[aria-pressed="true"] {
+  background: #D4AF72;
+  border-color: #D4AF72;
+  color: #1a1410;
+}
+
+/* Toggle de favoritos */
+.cat-fav-toggle {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: transparent;
+  border: 1px solid #3d2e20;
+  color: #8C7B6E;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.cat-fav-toggle svg {
+  width: 14px;
+  height: 14px;
+}
+
+.cat-fav-toggle[aria-pressed="true"] {
+  border-color: #D4AF72;
+  color: #D4AF72;
+}
+
+/* Línea de resultados */
+.cat-result-line {
+  max-width: 1180px;
+  margin: 1rem auto 0;
+  padding: 0 1.5rem;
+  color: #8C7B6E;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+}
+
+/* ---------- GRID DE TARJETAS ---------- */
+.cat-grid {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 4rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.4rem;
+}
+
+/* ---------- TARJETA ---------- */
+.cat-card {
+  background: #F0E9DA;
+  border: 0.5px solid #d4c4a8;
+  border-radius: 12px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+
+.cat-card:hover {
+  box-shadow: 0 4px 24px rgba(212, 175, 114, 0.28);
+  transform: translateY(-3px);
+}
+
+/* Arte del frasco */
+.cat-card-art {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #1a1410;
+}
+
+.cat-card-art svg {
+  width: 42%;
+  height: 85%;
+  filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.5));
+}
+
+/* Etiqueta de categoría */
+.cat-tag {
+  position: absolute;
+  left: 0.6rem;
+  bottom: 0.6rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 0.28rem 0.55rem;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.cat-tag.ella {
+  background: rgba(140, 80, 60, 0.35);
+  color: #e09070;
+}
+
+.cat-tag.el {
+  background: rgba(90, 120, 150, 0.35);
+  color: #8aa8c4;
+}
+
+.cat-tag.unisex {
+  background: rgba(212, 175, 114, 0.28);
+  color: #D4AF72;
+}
+
+/* Botón de favorito */
+.cat-fav-btn {
+  position: absolute;
+  top: 0.55rem;
+  right: 0.55rem;
+  background: rgba(26, 20, 16, 0.6);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(244, 238, 225, 0.2);
+  border-radius: 50%;
+  cursor: pointer;
+  color: #FAF7F2;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: background 0.2s;
+}
+
+.cat-fav-btn svg {
+  width: 16px;
+  height: 16px;
+  transition: fill 0.2s, stroke 0.2s;
+}
+
+.cat-fav-btn[aria-pressed="true"] svg {
+  fill: #D4AF72;
+  stroke: #D4AF72;
+}
+
+/* Cuerpo de la tarjeta */
+.cat-card-body {
+  padding: 1rem 1.1rem 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.cat-card-body h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.35rem;
+  margin: 0;
+  color: #1a1410;
+}
+
+.cat-short-desc {
+  color: #5a4d3e;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.cat-card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.3rem;
+  padding-bottom: 0.2rem;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.cat-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #8a6c2a;
+  flex-shrink: 0;
+}
+
+.cat-foot-actions {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Botón "Agregar" (pie de tarjeta) */
+.cat-add-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #1a1410;
+  color: #D4AF72;
+  border: 1px solid #D4AF72;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+
+.cat-add-btn svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.cat-add-btn:hover {
+  background: #D4AF72;
+  color: #1a1410;
+  transform: scale(1.04);
+}
+
+.cat-add-btn.cat-btn-added {
+  background: #5a7a3a;
+  border-color: #5a7a3a;
+  color: #FAF7F2;
+  pointer-events: none;
+}
+
+/* Botón "Agregar" dentro del panel expandible */
+.cat-add-btn--full {
+  width: 100%;
+  justify-content: center;
+  font-size: 0.92rem;
+  padding: 0.65rem 1rem;
+}
+
+/* Grupo de acciones dentro del panel */
+.cat-detail-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 0;
+}
+
+.cat-expand-btn {
+  background: transparent;
+  border: 1px solid #d4c4a8;
+  color: #1a1410;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: background 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+
+.cat-expand-btn:hover {
+  background: #e8dfc8;
+  border-color: #D4AF72;
+}
+
+.cat-expand-btn svg {
+  width: 11px;
+  height: 11px;
+  transition: transform 0.25s;
+}
+
+.cat-expand-btn[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+
+.cat-expand-btn[aria-expanded="true"] {
+  background: #D4AF72;
+  border-color: #D4AF72;
+  color: #1a1410;
+}
+
+/* Badge de la bolsa — visible cuando hay items */
+#cart-badge {
+  display: none;
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: #D4AF72;
+  color: #1a1410;
+  font-size: 0.65rem;
+  font-weight: 800;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* ---------- PANEL EXPANDIBLE (pirámide olfativa) ---------- */
+.cat-details {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+}
+
+.cat-details[data-open="true"] {
+  grid-template-rows: 1fr;
+}
+
+.cat-details-inner {
+  overflow: hidden;
+}
+
+.cat-details-content {
+  padding: 1rem 1.1rem 1.1rem;
+  border-top: 1px solid #d4c4a8;
+  background: #faf5ec;
+}
+
+/* Pirámide */
+.cat-pyramid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  margin-bottom: 0.85rem;
+}
+
+.cat-pyr-row {
+  display: grid;
+  grid-template-columns: 74px 1fr;
+  gap: 0.6rem;
+  align-items: start;
+}
+
+.cat-pyr-label {
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #8C7B6E;
+  padding-top: 0.2rem;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.cat-pyr-bar {
+  height: 7px;
+  border-radius: 4px;
+  background: #e8dfc8;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 0.3rem;
+}
+
+.cat-pyr-bar i {
+  position: absolute;
+  inset: 0;
+  border-radius: 4px;
+}
+
+.cat-pyr-row.salida .cat-pyr-bar i {
+  width: 38%;
+  background: #8C7B6E;
+}
+
+.cat-pyr-row.corazon .cat-pyr-bar i {
+  width: 66%;
+  background: #D4AF72;
+}
+
+.cat-pyr-row.fondo .cat-pyr-bar i {
+  width: 92%;
+  background: #8a6c2a;
+}
+
+.cat-pyr-notes {
+  font-size: 0.88rem;
+  color: #1a1410;
+  opacity: 0.9;
+}
+
+.cat-long-desc {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #5a4d3e;
+  margin: 0 0 1rem;
+}
+
+/* Botón de pedido */
+.cat-order-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #D4AF72;
+  color: #1a1410;
+  font-weight: 800;
+  font-size: 0.9rem;
+  padding: 0.65rem 1.1rem;
+  border-radius: 999px;
+  text-decoration: none;
+  width: 100%;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  transition: background 0.25s;
+}
+
+.cat-order-btn:hover {
+  background: #b8932a;
+  color: #FAF7F2;
+}
+
+.cat-order-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Estado vacío */
+.cat-empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #8C7B6E;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.cat-empty-state strong {
+  display: block;
+  color: #1a1410;
+  font-style: italic;
+  font-size: 1.35rem;
+  margin-bottom: 0.4rem;
+}
+
+/* ---------- MODO OSCURO (catálogo) ---------- */
+body.modo-oscuro .cat-add-btn {
+  background: #2e2318;
+  border-color: #D4AF72;
+  color: #D4AF72;
+}
+
+body.modo-oscuro .cat-add-btn:hover {
+  background: #D4AF72;
+  color: #1a1410;
+}
+
+body.modo-oscuro .cat-card {
+  background: #1E1A14;
+  border-color: #A07840;
+  color: #EDE0CC;
+}
+
+body.modo-oscuro .cat-card-body h3 {
+  color: #EDE0CC;
+}
+
+body.modo-oscuro .cat-short-desc {
+  color: #9A8A78;
+}
+
+body.modo-oscuro .cat-price {
+  color: #D4AF72;
+}
+
+body.modo-oscuro .cat-expand-btn {
+  color: #EDE0CC;
+  border-color: #A07840;
+}
+
+body.modo-oscuro .cat-expand-btn:hover {
+  background: #2e2318;
+}
+
+body.modo-oscuro .cat-expand-btn[aria-expanded="true"] {
+  background: #D4AF72;
+  color: #1a1410;
+}
+
+body.modo-oscuro .cat-details-content {
+  background: #1a1410;
+  border-color: #3d2e20;
+}
+
+body.modo-oscuro .cat-pyr-bar {
+  background: #2e2318;
+}
+
+body.modo-oscuro .cat-pyr-notes {
+  color: #EDE0CC;
+}
+
+body.modo-oscuro .cat-long-desc {
+  color: #9A8A78;
+}
+
+body.modo-oscuro .cat-empty-state strong {
+  color: #EDE0CC;
+}
+
+body.modo-oscuro .cat-controls {
+  background: rgba(26, 20, 16, 0.98);
+}
+
+body.modo-oscuro .cat-search-wrap input {
+  background: #1E1A14;
+  color: #EDE0CC;
+  border-color: #3d2e20;
+}
+
+body.modo-oscuro .cat-card-art {
+  background: #100E0B;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .cat-controls-inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cat-fav-toggle {
+    margin-left: 0;
+    justify-content: center;
+  }
+
+  .cat-grid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .cat-card-art {
+    aspect-ratio: 16 / 9;
+  }
+}

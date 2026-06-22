@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo · Parfum de Diamant</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap"
+    rel="stylesheet">
+  <link rel='stylesheet'
+    href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+  <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-brands/css/uicons-brands.css'>
+  <link rel="stylesheet" href="../css/styles_catalogo.css">
+  <link rel="shortcut icon" href="../imagenes/logo.png" type="image/x-icon">
+</head>
+
+<body>
+
+  <!-- ===== HEADER / NAV (idéntico al index) ===== -->
+  <main class="cont">
+    <header id="header" class="Cabe">
+      <div class="navegacion">
+        <div class="nomb">
+          <h5>Parfum</h5>
+          <h5 class="Gld">De</h5>
+          <h5>Diamant</h5>
+        </div>
+
+        <nav class="nav">
+          <a href="Landing.html">Inicio</a>
+          <a href="catalogo.html" class="nav-active">Catalogo</a>
+          <a href="">Colección</a>
+          <a href="compras.html">Compra</a>
+        </nav>
+
+        <div class="bolsa">
+          <div class="tema">
+            <button type="button" onclick="Cambio()"><i class="fi fi-rr-night-day"></i></button>
+          </div>
+          <div class="icono-wrap">
+            <a href="compras.html">
+              <i class="fi fi-rr-shopping-bag"></i>
+              <span class="badge" id="cart-badge">0</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero del catálogo -->
+      <div class="bg_t cat-hero">
+        <div class="texto">
+          <span class="cat-eyebrow">Colección 2026 · 10 fragancias</span>
+          <h1 class="Titulo">Catálogo de <em class="Gld">Lociones</em></h1>
+          <p>Una selección para encontrar la tuya. Toca cualquier frasco para abrir su pirámide olfativa y conocer cada
+            nota, de la salida al fondo.</p>
+        </div>
+        <div class="cat-hero-stage" aria-hidden="true">
+          <span class="ripple"></span>
+          <span class="ripple r2"></span>
+          <span class="ripple r3"></span>
+          <svg class="bottle-hero" viewBox="0 0 60 90" fill="none">
+            <rect x="22" y="4" width="16" height="12" rx="2" fill="#D4AF72" />
+            <rect x="26" y="0" width="8" height="6" rx="1.5" fill="#E2C465" />
+            <path d="M16 22c0-3 2.5-5.5 6-6h16c3.5.5 6 3 6 6v54c0 6-4 10-10 10H26c-6 0-10-4-10-10V22z" fill="#1a1410"
+              stroke="#D4AF72" stroke-width="1.4" />
+            <path d="M19 40h22" stroke="#D4AF72" stroke-width="1" opacity=".5" />
+          </svg>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===== CONTROLES ===== -->
+    <div class="cat-controls">
+      <div class="cat-controls-inner">
+        <div class="cat-search-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
+            <circle cx="11" cy="11" r="7" />
+            <path d="m21 21-4.3-4.3" />
+          </svg>
+          <input id="search" type="text" placeholder="Busca por nombre o nota olfativa..." autocomplete="off">
+        </div>
+        <div class="cat-pills" id="pills" role="group" aria-label="Filtrar por categoría">
+          <button class="cat-pill" data-filter="todas" aria-pressed="true">Todas</button>
+          <button class="cat-pill" data-filter="ella" aria-pressed="false">Mujer</button>
+          <button class="cat-pill" data-filter="el" aria-pressed="false">Hombre</button>
+          <button class="cat-pill" data-filter="unisex" aria-pressed="false">Unisex</button>
+        </div>
+        <button class="cat-fav-toggle" id="favToggle" aria-pressed="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path
+              d="M12 21s-7-4.4-9.5-9C.7 8.4 2.4 4.5 6 4c2-.3 3.7.7 6 3 2.3-2.3 4-3.3 6-3 3.6.5 5.3 4.4 3.5 8-2.5 4.6-9.5 9-9.5 9z" />
+          </svg>
+          <span id="favCount">0</span> favoritos
+        </button>
+      </div>
+    </div>
+
+    <p class="cat-result-line" id="resultLine">Mostrando 10 de 10 fragancias</p>
+
+    <!-- ===== GRID DE PRODUCTOS ===== -->
+    <section class="cat-grid" id="grid"></section>
+
+    <!-- ===== FOOTER (idéntico al index) ===== -->
+    <footer>
+      <div class="redes">
+        <h3>Contactenos</h3>
+        <div class="as_f">
+          <div class="redes_a1">
+            <a href=""><i class="fi fi-brands-facebook"> Facebook</i></a>
+            <a href=""><i class="fi fi-brands-instagram"> Instagram</i></a>
+          </div>
+          <div class="redes_a2">
+            <a href=""><i class="fi fi-brands-tiktok-circle"> Tik Tok</i></a>
+            <a href=""><i class="fi fi-brands-youtube"> Youtube</i></a>
+          </div>
+        </div>
+      </div>
+      <div class="desc_f">
+        <h3>Parfum de Diamant</h3>
+        <p>"En Parfum de Diamant creemos que la fragancia correcta no se busca, se reconoce. Cada esencia de
+          nuestra colección fue elegida para quienes exigen lo extraordinario."</p>
+        <p>© 2025 Parfum de Diamant. Todos los derechos reservados.</p>
+      </div>
+      <div class="contact">
+        <h3>Contactenos</h3>
+        <p>+57 30034567823</p>
+        <p>Dir: Crr 23 #45 A15</p>
+      </div>
+      <div class="hor">
+        <h3>Horarios de atencion.</h3>
+        <ol>
+          <li>10:00 am</li>
+          <li>5:00 pm</li>
+        </ol>
+      </div>
+    </footer>
+
+    <button id="backtotop" aria-label="Volver arriba">↑</button>
+  </main>
+
+  <!-- Botón WhatsApp flotante -->
+  <a class="btn-whatsapp" href="https://wa.me/12345678900" target="_blank">
+    <i class="fi fi-brands-whatsapp"></i>
+  </a>
+
+  <script src="../js/interactividad.js"></script>
+  <script src="../js/catalogo.js"></script>
+</body>
+
+</html>

@@ -1,98 +1,163 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compras · Parfum de Diamant</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Dancing+Script:wght@400..700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap"
         rel="stylesheet">
     <link rel='stylesheet'
         href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-    <link rel="stylesheet" href="/css/style_compras.css">
-    <link rel="shortcut icon" href="/imagenes/logo.png" type="image/x-icon">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-brands/css/uicons-brands.css'>
-    <title>Compras-Parfum De Diamant</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style_compras.css">
+    <link rel="shortcut icon" href="../imagenes/logo.png" type="image/x-icon">
 </head>
 
-<body class="section">
-    <div class="navegacion">
-        <div class="nomb">
-            <h5>Parfum</h5>
-            <h5 class="Gld">De</h5>
-            <h5>Diamant</h5>
-        </div>
+<body>
+    <main class="cont">
 
-        <nav class="nav">
-            <a href="index.html">Inicio</a>
-            <a href="">Catalogo</a>
-            <a href="">Colección</a>
-            <a href="compras.html">Compra</a>
-        </nav>
-
-        <div class="bolsa">
-            <div class="tema">
-                <button type="button" onclick="Cambio()"><i class="fi fi-rr-night-day"></i></button>
-            </div>
-
-            <div class="icono-wrap">
-                <i class="fi fi-rr-shopping-bag"></i>
-                <span class="badge" id="cart-badge">0</span>
-            </div>
-        </div>
-    </div>
-    <main>
-        <h1>Parfum de diamant</h1>
-        <div class="imgs_compr">
-            <div class="card img1"></div>
-            <div class="card img2"></div>
-            <div class="card img3"></div>
-        </div>
-
-        <h1>Tus compras</h1>
-        <div id="carouselExample" class="carousel slide">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="/imagenes/le beau.webp" class="d-block w-90" id="imagencarusel" alt="...">
+        <!-- NAV (idéntico al index) -->
+        <header id="header" class="Cabe">
+            <div class="navegacion">
+                <div class="nomb">
+                    <h5>Parfum</h5>
+                    <h5 class="Gld">De</h5>
+                    <h5>Diamant</h5>
                 </div>
-                <div class="carousel-item">
-                    <img src="/imagenes/optimizadas/sauvage-dior-2.webp" class="d-block w-90" id="imagencarusel2"
-                        alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="/imagenes/optimizadas/one_million_2.webp" class="d-block w-90" id="imagencarusel3"
-                        alt="...">
+                <nav class="nav">
+                    <a href="Landing.html">Inicio</a>
+                    <a href="catalogo.html">Catalogo</a>
+                    <a href="">Colección</a>
+                    <a href="compras.html" class="nav-active">Compra</a>
+                </nav>
+                <div class="bolsa">
+                    <div class="tema">
+                        <button type="button" onclick="Cambio()"><i class="fi fi-rr-night-day"></i></button>
+                    </div>
+                    <div class="icono-wrap">
+                        <a href="compras.html">
+                            <i class="fi fi-rr-shopping-bag"></i>
+                            <span class="badge" id="cart-badge">0</span>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
 
+            <!-- Mini-hero de la página -->
+            <div class="bg_t compras-hero">
+                <div class="texto">
+                    <h1 class="Titulo">Tu <em class="Gld">Bolsa</em></h1>
+                    <p>Revisa los productos seleccionados y finaliza tu pedido cuando estés listo.</p>
+                </div>
+                <div class="compras-hero-icon" aria-hidden="true">
+                    <i class="fi fi-rr-shopping-bag"></i>
+                </div>
+            </div>
+        </header>
 
+        <!-- CONTENIDO DEL CARRITO -->
+        <section class="compras-wrap">
+            <div class="compras-inner">
 
+                <!-- Lista de ítems -->
+                <div class="compras-lista" id="comprasLista">
 
+                </div>
 
+                <!-- Resumen y acciones -->
+                <aside class="compras-resumen" id="comprasResumen">
+                    <h2>Resumen del pedido</h2>
+                    <hr>
+                    <div class="resumen-lineas" id="resumenLineas"></div>
+                    <hr>
+                    <div class="resumen-total">
+                        <span>Total</span>
+                        <strong id="resumenTotal">$0 COP</strong>
+                    </div>
+                    <a class="compras-wa-btn" id="comprasWaBtn" href="#" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22
+                l5.27-1.38a9.9 9.9 0 0 0 4.77 1.22h.01c5.46 0 9.91-4.45 9.91-9.91
+                C21.96 6.45 17.5 2 12.04 2zm5.8 14.07c-.24.68-1.4 1.3-1.93 1.38
+                -.5.08-1.12.11-1.81-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.8-4.17
+                -4.94-4.36-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41
+                .27-.29.59-.36.78-.36.2 0 .39 0 .56.01.18.01.42-.07.65.5
+                .24.58.81 2 .88 2.15.07.15.12.32.02.51-.1.2-.15.32-.3.49
+                -.15.17-.31.39-.45.52-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.02
+                1.12 1 2.06 1.31 2.35 1.46.29.15.46.13.63-.08.17-.2.72-.84.91-1.13
+                .19-.29.39-.24.65-.14.27.1 1.69.8 1.98.94.29.15.48.22.55.34
+                .07.12.07.71-.17 1.39z" />
+                        </svg>
+                        Pedir todo por WhatsApp
+                    </a>
+                    <button class="compras-vaciar-btn" id="comprasVaciarBtn">
+                        Vaciar bolsa
+                    </button>
+                </aside>
 
-        <button id="backtotop" aria-label="Volver arriba">
-            ↑
-        </button>
+            </div>
+
+            <!-- Estado vacío -->
+            <div class="compras-vacia" id="comprasVacia" style="display:none;">
+                <div class="compras-vacia-icon" aria-hidden="true">
+                    <i class="fi fi-rr-shopping-bag"></i>
+                </div>
+                <h2>Tu bolsa está vacía</h2>
+                <p>Agrega fragancias desde el catálogo para verlas aquí.</p>
+                <a href="catalogo.html" class="compras-ir-cat">Ver catálogo</a>
+            </div>
+        </section>
+
+        <!-- FOOTER (idéntico al index) -->
+        <footer>
+            <div class="redes">
+                <h3>Contactenos</h3>
+                <div class="as_f">
+                    <div class="redes_a1">
+                        <a href=""><i class="fi fi-brands-facebook"> Facebook</i></a>
+                        <a href=""><i class="fi fi-brands-instagram"> Instagram</i></a>
+                    </div>
+                    <div class="redes_a2">
+                        <a href=""><i class="fi fi-brands-tiktok-circle"> Tik Tok</i></a>
+                        <a href=""><i class="fi fi-brands-youtube"> Youtube</i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="desc_f">
+                <h3>Parfum de Diamant</h3>
+                <p>"En Parfum de Diamant creemos que la fragancia correcta no se busca, se reconoce."</p>
+                <p>© 2025 Parfum de Diamant. Todos los derechos reservados.</p>
+            </div>
+            <div class="contact">
+                <h3>Contactenos</h3>
+                <p>+57 30034567823</p>
+                <p>Dir: Crr 23 #45 A15</p>
+            </div>
+            <div class="hor">
+                <h3>Horarios de atencion.</h3>
+                <ol>
+                    <li>10:00 am</li>
+                    <li>5:00 pm</li>
+                </ol>
+            </div>
+        </footer>
+
+        <button id="backtotop" aria-label="Volver arriba">↑</button>
     </main>
-    <!-- boton whatsapp -->
+
     <a class="btn-whatsapp" href="https://wa.me/12345678900" target="_blank">
         <i class="fi fi-brands-whatsapp"></i>
     </a>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/js/compras.js"></script>
+
+    <script src="../js/interactividad.js"></script>
+    <script src="../js/compras.js"></script>
 </body>
 
 </html>
