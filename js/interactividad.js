@@ -41,3 +41,9 @@ btn_sb.addEventListener('click', () => {
         behavior: "smooth"
     });
 });
+
+function cerrarSesion() {
+    localStorage.removeItem("usuario");
+    localStorage.removeItem("rol");
+    window.location.href = "../Html/index.html";
+}

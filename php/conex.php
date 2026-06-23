@@ -48,7 +48,11 @@ if ($accion === "registro") {
         $usuario = mysqli_fetch_assoc($resultado);
         
         if (password_verify($contraInput, $usuario["contrasena"])) {
-            echo json_encode(["mensaje" => "Inicio de sesión exitoso"]);
+            echo json_encode([
+               "mensaje" => "Inicio de sesión exitoso",
+               "rol" => $usuario["rol"],
+               "nombre" => $usuario["nombre"] 
+            ]);
         } else {
             echo json_encode(["error" => "La contraseña es incorrecta"]);
         }

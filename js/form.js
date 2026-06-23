@@ -24,6 +24,7 @@ function registrarUsuario() {
     if (contra !== contra_conf) {
         document.getElementById("alert3").textContent = "Las contraseñas deben de coincidir"
         document.getElementById("alert3").style = "color: red"
+
         return
     }
 
@@ -97,11 +98,14 @@ function iniciarUsuario() {
                 const data = JSON.parse(text);
 
                 if (data.mensaje) {
-                    console.log("¡Inicio de sesión exitoso!");
-                    window.location.href = "Landing.html";
-                } else {
-                    document.getElementById("alert1_i").textContent = data.error || "Credenciales incorrectas";
-                    document.getElementById("alert1_i").style = "color: red";
+                    localStorage.setItem("usuario", data.nombre);
+                    localStorage.setItem("rol", data.rol);
+
+                    if (data.rol === "admin") {
+                        window.location.href = "../Html/Admin.html";
+                    } else {
+                        window.location.href = "../Html/Landing.html";
+                    }
                 }
             } catch (err) {
                 console.error("El PHP falló:\n\n", text);

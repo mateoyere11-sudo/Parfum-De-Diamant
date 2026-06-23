@@ -439,7 +439,9 @@ footer {
     box-shadow: 0 4px 25px rgba(37, 211, 102, 0.8);
 }
 
-
+.cerrar-sesion button {
+    background-color: #25D366;
+}
 
 
 
