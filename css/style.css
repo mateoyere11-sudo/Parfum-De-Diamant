@@ -158,6 +158,7 @@ nav a {
     border: none;
     color: #8C7B6E;
     height: auto;
+    margin: 0px 10px;
 }
 
 /* Tarjetas */
@@ -440,7 +441,9 @@ footer {
 }
 
 .cerrar-sesion button {
-    background-color: #25D366;
+    background-color: #D4AF72;
+    width: 100px;
+    border-radius: 10px;
 }
 
 

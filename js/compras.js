@@ -46,12 +46,20 @@ function miniBottle(id) {
   </svg>`;
 }
 
-// ----------------------------------------------------------
-// Carrito (igual que en catalogo.js)
-// ----------------------------------------------------------
 function cartLoad() {
     try { return JSON.parse(localStorage.getItem(CART_KEY)) || []; }
     catch { return []; }
+}
+
+
+function artOrImage(p) {
+    if (p.imagen) {
+        return `<img
+            src="../imagenes/productos/${p.imagen}"
+            alt="${p.name}"
+            style="width:100%; height:100%; object-fit:cover; display:block;">`;
+    }
+    return bottleArt(p);
 }
 
 function cartSave(items) {
@@ -102,7 +110,7 @@ function renderCompras() {
     lista.innerHTML = items.map(item => `
     <div class="compras-item" data-id="${item.id}">
       <div class="compras-item-art">
-        ${miniBottle(item.id)}
+        ${artOrImage(p)}
       </div>
       <div class="compras-item-info">
         <p class="compras-item-name">${item.name}</p>

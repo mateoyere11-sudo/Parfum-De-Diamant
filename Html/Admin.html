@@ -4,11 +4,498 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin | Parfum De Diamnt</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap"
+        rel="stylesheet">
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-brands/css/uicons-brands.css'>
+    <link rel="stylesheet" href="../css/admin_style.css">
+    <title>Admin — Parfum de Diamant</title>
 </head>
 
 <body>
-    <h1>Aterrizaje de admin</h1>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <div class="marca">
+                <span>Parfum</span>
+                <span class="Gld">De</span>
+                <span>Diamant</span>
+            </div>
+            <p>Panel de administración</p>
+        </div>
+
+        <span class="nav-section-label">General</span>
+        <a href="#" class="nav-item active" onclick="mostrarSeccion('dashboard', this)">
+            <i class="fi fi-rr-layout-fluid"></i> Dashboard
+        </a>
+        <a href="#" class="nav-item" onclick="mostrarSeccion('productos', this)">
+            <i class="fi fi-rr-shopping-bag"></i> Productos
+        </a>
+        <a href="#" class="nav-item" onclick="mostrarSeccion('usuarios', this)">
+            <i class="fi fi-rr-user"></i> Usuarios
+        </a>
+        <a href="#" class="nav-item" onclick="mostrarSeccion('pedidos', this)">
+            <i class="fi fi-rr-receipt"></i> Pedidos
+        </a>
+
+        <span class="nav-section-label">Sistema</span>
+        <a href="Landing.html" class="nav-item">
+            <i class="fi fi-rr-arrow-left"></i> Volver al sitio
+        </a>
+
+        <div class="sidebar-footer">
+            <div class="usr">
+                <div class="avatar-circle" id="avatar-iniciales">AD</div>
+                <div>
+                    <div class="usr-name" id="sidebar-nombre">Admin</div>
+                    <div class="usr-rol">Administrador</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- MAIN -->
+    <div class="main-wrap">
+
+        <!-- TOPBAR -->
+        <div class="topbar">
+            <h2>Panel <em>Administrativo</em></h2>
+            <div class="topbar-right">
+                <button class="icon-btn-top" onclick="Cambio()" title="Cambiar tema">
+                    <i class="fi fi-rr-night-day"></i>
+                </button>
+                <button class="icon-btn-top" title="Notificaciones" style="position:relative">
+                    <i class="fi fi-rr-bell"></i>
+                    <span class="notif-badge">3</span>
+                </button>
+                <button class="btn-cerrar" onclick="cerrarSesion()">Cerrar sesión</button>
+            </div>
+        </div>
+
+        <!-- CONTENIDO -->
+        <div class="content">
+
+            <!-- ── DASHBOARD ── -->
+            <div id="sec-dashboard">
+                <div class="page-intro">
+                    <h1>Bienvenido, <em id="titulo-nombre">Admin</em></h1>
+                    <p>Resumen general de Parfum de Diamant</p>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric-card">
+                        <div class="met-label"><i class="fi fi-rr-users"></i> Usuarios</div>
+                        <div class="met-val">1,284</div>
+                        <div class="met-delta delta-pos">↑ +12% este mes</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="met-label"><i class="fi fi-rr-shopping-bag"></i> Productos</div>
+                        <div class="met-val">48</div>
+                        <div class="met-delta delta-pos">↑ +3 nuevos</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="met-label"><i class="fi fi-rr-receipt"></i> Pedidos</div>
+                        <div class="met-val">347</div>
+                        <div class="met-delta delta-pos">↑ +8% este mes</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="met-label"><i class="fi fi-rr-dollar"></i> Ingresos</div>
+                        <div class="met-val">$24.8M</div>
+                        <div class="met-delta delta-neg">↓ -3% este mes</div>
+                    </div>
+                </div>
+
+                <div class="lower-grid">
+                    <!-- Tabla productos -->
+                    <div class="panel">
+                        <div class="panel-head">
+                            <h3>Productos <em>recientes</em></h3>
+                            <button class="btn-gold" onclick="mostrarSeccion('productos', null)">Ver todos</button>
+                        </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Producto</th>
+                                    <th>Precio</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="prod-cell">
+                                            <div class="prod-thumb"><i class="fi fi-rr-flower"></i></div>
+                                            <div>
+                                                <div class="prod-name">Le Beau Le Parfum</div>
+                                                <div class="prod-sub">Jean Paul Gaultier</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>$200.000</td>
+                                    <td><span class="pill pill-green">Activo</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="prod-cell">
+                                            <div class="prod-thumb"><i class="fi fi-rr-flower"></i></div>
+                                            <div>
+                                                <div class="prod-name">Sauvage Dior</div>
+                                                <div class="prod-sub">Christian Dior</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>$180.000</td>
+                                    <td><span class="pill pill-green">Activo</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="prod-cell">
+                                            <div class="prod-thumb"><i class="fi fi-rr-flower"></i></div>
+                                            <div>
+                                                <div class="prod-name">Stronger With You</div>
+                                                <div class="prod-sub">Emporio Armani</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>$150.000</td>
+                                    <td><span class="pill pill-amber">Agotando</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="prod-cell">
+                                            <div class="prod-thumb"><i class="fi fi-rr-flower"></i></div>
+                                            <div>
+                                                <div class="prod-name">Born In Roma</div>
+                                                <div class="prod-sub">Valentino</div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>$95.000</td>
+                                    <td><span class="pill pill-red">Agotado</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Pedidos recientes -->
+                    <div class="panel">
+                        <div class="panel-head">
+                            <h3>Pedidos <em>recientes</em></h3>
+                        </div>
+                        <div class="pedidos-list">
+                            <div class="pedido-item">
+                                <div class="pedido-info">
+                                    <div class="ped-name">Alejandro V.</div>
+                                    <div class="ped-prod">Le Beau Le Parfum</div>
+                                </div>
+                                <div><span class="pill pill-green"
+                                        style="display:block;text-align:center;margin-bottom:4px">Entregado</span>
+                                    <div class="pedido-precio">$200.000</div>
+                                </div>
+                            </div>
+                            <div class="pedido-item">
+                                <div class="pedido-info">
+                                    <div class="ped-name">Helena R.</div>
+                                    <div class="ped-prod">Sauvage Dior</div>
+                                </div>
+                                <div><span class="pill pill-amber"
+                                        style="display:block;text-align:center;margin-bottom:4px">En camino</span>
+                                    <div class="pedido-precio">$180.000</div>
+                                </div>
+                            </div>
+                            <div class="pedido-item">
+                                <div class="pedido-info">
+                                    <div class="ped-name">Mauricio G.</div>
+                                    <div class="ped-prod">Born In Roma</div>
+                                </div>
+                                <div><span class="pill pill-dark"
+                                        style="display:block;text-align:center;margin-bottom:4px">Pendiente</span>
+                                    <div class="pedido-precio">$95.000</div>
+                                </div>
+                            </div>
+                            <div class="pedido-item">
+                                <div class="pedido-info">
+                                    <div class="ped-name">Carlos M.</div>
+                                    <div class="ped-prod">Stronger With You</div>
+                                </div>
+                                <div><span class="pill pill-green"
+                                        style="display:block;text-align:center;margin-bottom:4px">Entregado</span>
+                                    <div class="pedido-precio">$150.000</div>
+                                </div>
+                            </div>
+                            <div class="pedido-item">
+                                <div class="pedido-info">
+                                    <div class="ped-name">María R.</div>
+                                    <div class="ped-prod">Le Beau Le Parfum</div>
+                                </div>
+                                <div><span class="pill pill-red"
+                                        style="display:block;text-align:center;margin-bottom:4px">Cancelado</span>
+                                    <div class="pedido-precio">$200.000</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ── PRODUCTOS ── -->
+            <div id="sec-productos" style="display:none">
+                <div class="page-intro" style="display:flex;align-items:flex-end;justify-content:space-between">
+                    <div>
+                        <h1>Gestión de <em>Productos</em></h1>
+                        <p>Catálogo completo de fragancias</p>
+                    </div>
+                    <button class="btn-save" onclick="abrirModal()" style="margin-bottom:6px">+ Agregar
+                        producto</button>
+                </div>
+                <div class="panel">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Precio</th>
+                                <th>Stock</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabla-productos">
+                            <tr>
+                                <td>
+                                    <div class="prod-cell">
+                                        <div class="prod-thumb"><i class="fi fi-rr-flower"></i></div>
+                                        <div>
+                                            <div class="prod-name">Le Beau Le Parfum</div>
+                                            <div class="prod-sub">Jean Paul Gaultier</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>$200.000</td>
+                                <td>12 uds.</td>
+                                <td><span class="pill pill-green">Activo</span></td>
+                                <td><button class="action-icon" title="Editar"><i
+                                            class="fi fi-rr-pencil"></i></button><button class="action-icon"
+                                        title="Eliminar" onclick="eliminarFila(this)"><i
+                                            class="fi fi-rr-trash"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="prod-cell">
+                                        <div class="prod-thumb"><i class="fi fi-rr-flower"></i></div>
+                                        <div>
+                                            <div class="prod-name">Sauvage Dior</div>
+                                            <div class="prod-sub">Christian Dior</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>$180.000</td>
+                                <td>20 uds.</td>
+                                <td><span class="pill pill-green">Activo</span></td>
+                                <td><button class="action-icon" title="Editar"><i
+                                            class="fi fi-rr-pencil"></i></button><button class="action-icon"
+                                        title="Eliminar" onclick="eliminarFila(this)"><i
+                                            class="fi fi-rr-trash"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="prod-cell">
+                                        <div class="prod-thumb"><i class="fi fi-rr-flower"></i></div>
+                                        <div>
+                                            <div class="prod-name">Stronger With You</div>
+                                            <div class="prod-sub">Emporio Armani</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>$150.000</td>
+                                <td>4 uds.</td>
+                                <td><span class="pill pill-amber">Agotando</span></td>
+                                <td><button class="action-icon" title="Editar"><i
+                                            class="fi fi-rr-pencil"></i></button><button class="action-icon"
+                                        title="Eliminar" onclick="eliminarFila(this)"><i
+                                            class="fi fi-rr-trash"></i></button></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="prod-cell">
+                                        <div class="prod-thumb"><i class="fi fi-rr-flower"></i></div>
+                                        <div>
+                                            <div class="prod-name">Born In Roma</div>
+                                            <div class="prod-sub">Valentino</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>$95.000</td>
+                                <td>0 uds.</td>
+                                <td><span class="pill pill-red">Agotado</span></td>
+                                <td><button class="action-icon" title="Editar"><i
+                                            class="fi fi-rr-pencil"></i></button><button class="action-icon"
+                                        title="Eliminar" onclick="eliminarFila(this)"><i
+                                            class="fi fi-rr-trash"></i></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ── USUARIOS ── -->
+            <div id="sec-usuarios" style="display:none">
+                <div class="page-intro">
+                    <h1>Gestión de <em>Usuarios</em></h1>
+                    <p>Clientes y administradores registrados</p>
+                </div>
+                <div class="panel">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Usuario</th>
+                                <th>Rol</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabla-usuarios">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- ── PEDIDOS ── -->
+            <div id="sec-pedidos" style="display:none">
+                <div class="page-intro" style="display:flex;align-items:flex-end;justify-content:space-between">
+                    <div>
+                        <h1>Gestión de <em>Pedidos</em></h1>
+                        <p>Todos los pedidos de clientes</p>
+                    </div>
+
+                    <button class="btn-save" onclick="abrirModalPedido()">+ Agregar pedido</button>
+                </div>
+
+
+                <div class="modal-overlay" id="modal-pedido" style="display:none;">
+                    <div class="modal">
+                        <h3>Agregar Nuevo <em style="color:#8a6c2a;font-style:italic">Pedido</em></h3>
+
+                        <label>Cliente *</label>
+                        <input type="text" id="pedido-cliente" placeholder="Ej: Alejandro V.">
+
+                        <label>Producto *</label>
+                        <input type="text" id="pedido-producto" placeholder="Ej: Le Beau Le Parfum">
+
+                        <label>Total (sin puntos) *</label>
+                        <input type="number" id="pedido-total" placeholder="Ej: 200000">
+
+                        <label>Estado Inicial *</label>
+                        <select id="pedido-estado">
+                            <option value="pendiente">Pendiente</option>
+                            <option value="en camino">En camino</option>
+                            <option value="entregado">Entregado</option>
+                            <option value="cancelado">Cancelado</option>
+                        </select>
+
+                        <div class="modal-btns">
+                            <button class="btn-cancel" onclick="cerrarModalPedido()">Cancelar</button>
+                            <button class="btn-save" onclick="guardarPedido()">Guardar Pedido</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-overlay" id="modal-detalle" style="display:none;">
+                    <div class="modal" style="border: 1px solid #8a6c2a;">
+                        <h3>Detalle del <em style="color:#8a6c2a;font-style:italic">Pedido</em></h3>
+                        <hr style="border-color: #8a6c2a; margin-bottom: 15px;">
+
+                        <div id="detalle-contenido" style="color: #fff; line-height: 1.6;">
+                        </div>
+
+                        <div class="modal-btns" style="margin-top: 20px;">
+                            <button class="btn-cancel" onclick="cerrarModalDetalle()">Cerrar</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="panel">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Cliente</th>
+                                <th>Producto</th>
+                                <th>Total</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabla-pedidos">
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- MODAL AGREGAR PRODUCTO -->
+    <div class="modal-overlay" id="modal-producto">
+        <div class="modal">
+            <h3>Agregar <em style="color:#8a6c2a;font-style:italic">Producto</em></h3>
+
+            <label>Nombre *</label>
+            <input type="text" id="input-nombre" placeholder="Ej: Sauvage Dior">
+
+            <label>Categoría *</label>
+            <select id="input-cat">
+                <option value="el">Para él</option>
+                <option value="ella">Para ella</option>
+                <option value="unisex">Unisex</option>
+            </select>
+
+            <label>Precio (sin puntos) *</label>
+            <input type="number" id="input-precio" placeholder="Ej: 180000">
+
+            <label>Descripción corta</label>
+            <input type="text" id="input-short" placeholder="Una frase que describa la fragancia">
+
+            <label>Descripción larga</label>
+            <textarea id="input-long" rows="3" placeholder="Historia completa de la fragancia..."></textarea>
+
+            <label>Notas de salida</label>
+            <input type="text" id="input-salida" placeholder="Ej: Bergamota, pimienta rosa">
+
+            <label>Notas de corazón</label>
+            <input type="text" id="input-corazon" placeholder="Ej: Oud, incienso">
+
+            <label>Notas de fondo</label>
+            <input type="text" id="input-fondo" placeholder="Ej: Ámbar, vainilla">
+
+            <label>Imagen del producto (jpg, png o webp)</label>
+            <input type="file" id="input-imagen" accept="image/jpeg,image/png,image/webp">
+
+            <label>Stock Disponible *</label>
+            <input type="number" id="input-stock" placeholder="Ej: 15" min="0" value="0">
+
+            <label>Estado del Producto *</label>
+            <select id="input-estado">
+                <option value="activo">Activo (Visible en tienda)</option>
+                <option value="inactivo">Inactivo (Oculto)</option>
+            </select>
+
+            <div class="modal-btns">
+                <button class="btn-cancel" onclick="cerrarModal()">Cancelar</button>
+                <button class="btn-save" onclick="guardarProducto()">Guardar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST -->
+    <div class="toast" id="toast"></div>
+
+    <button id="backtotop" aria-label="Volver arriba">↑</button>
+    <script src="../js/admin.js"></script>
 </body>
 
 </html>

@@ -4,79 +4,6 @@
 
 const WHATSAPP_NUMBER = '';
 
-const PRODUCTS = [
-  {
-    id: 'aurum-noir', name: 'Aurum Noir', cat: 'unisex', price: 135000,
-    shape: 'hex', liquid: '#C9A227', cap: '#7A5E12',
-    short: 'Una noche envuelta en resina y oro: intensa y magnética.',
-    long: 'Aurum Noir abre con un chispazo de pimienta rosa sobre bergamota, pero su alma vive en el oud y el incienso del corazón. El fondo de ámbar y vainilla deja una estela cálida que se queda horas después de la última aplicación.',
-    salida: 'Bergamota, pimienta rosa', corazon: 'Oud, incienso', fondo: 'Ámbar, vainilla, almizcle'
-  },
-  {
-    id: 'brisa-marina', name: 'Brisa Marina', cat: 'el', price: 98000,
-    shape: 'cylinder', liquid: '#7FA0B4', cap: '#4F6B79',
-    short: 'Aire de costa al mediodía: cítrico, salado y limpio.',
-    long: 'Pensada para días de sol, Brisa Marina combina mandarina y sal marina con un corazón herbal de romero. El cedro del fondo le da estructura sin pesar, ideal para uso diario.',
-    salida: 'Mandarina, sal marina', corazon: 'Romero, geranio', fondo: 'Cedro, almizcle blanco'
-  },
-  {
-    id: 'flor-azahar', name: 'Flor de Azahar', cat: 'ella', price: 112000,
-    shape: 'curvy', liquid: '#F1D9C8', cap: '#D98B73',
-    short: 'Un jardín mediterráneo al amanecer, ligero y luminoso.',
-    long: 'Flor de Azahar captura ese instante en que abren los naranjos: cítrico, blanco y fresco. El jazmín y el loto del corazón suavizan la entrada, y el almizcle del fondo prolonga su delicadeza durante el día.',
-    salida: 'Azahar, bergamota', corazon: 'Jazmín, flor de loto', fondo: 'Almizcle blanco, cedro'
-  },
-  {
-    id: 'cafe-cuero', name: 'Café & Cuero', cat: 'el', price: 145000,
-    shape: 'square', liquid: '#6B4A2E', cap: '#3E2A18',
-    short: 'Carácter y sobremesa: cuero curtido sobre café recién molido.',
-    long: 'Café & Cuero es para noches largas. El cardamomo despierta el café tostado de salida; tabaco y cuero dominan el corazón con una densidad casi táctil, y el fondo de haba tonka redondea el conjunto con dulzura discreta.',
-    salida: 'Café tostado, cardamomo', corazon: 'Tabaco, cuero', fondo: 'Haba tonka, sándalo'
-  },
-  {
-    id: 'jardin-secreto', name: 'Jardín Secreto', cat: 'ella', price: 118000,
-    shape: 'curvy', liquid: '#D9667A', cap: '#9C3F52',
-    short: 'Frutal y floral, como un jardín que solo tú conoces.',
-    long: 'La frambuesa y la pera abren paso a un corazón de peonía y rosa recién cortada. Jardín Secreto cierra con sándalo suave, una firma romántica pensada para el día y la noche.',
-    salida: 'Frambuesa, pera', corazon: 'Peonía, rosa', fondo: 'Sándalo, almizcle'
-  },
-  {
-    id: 'roble-ahumado', name: 'Roble Ahumado', cat: 'unisex', price: 128000,
-    shape: 'hex', liquid: '#5C6B5A', cap: '#33402F',
-    short: 'Bosque después de la lluvia, con un toque de humo lejano.',
-    long: 'Roble Ahumado es terroso y envolvente. El vetiver y el incienso del corazón se apoyan en una salida especiada de pimienta negra, mientras el roble y el cuero del fondo construyen una estela profunda y duradera.',
-    salida: 'Pimienta negra, enebro', corazon: 'Vetiver, incienso', fondo: 'Roble, cuero'
-  },
-  {
-    id: 'dulce-caramelo', name: 'Dulce Caramelo', cat: 'ella', price: 105000,
-    shape: 'curvy', liquid: '#C98A3D', cap: '#7A4E1E',
-    short: 'Gourmand y cálida, como un postre recién hecho.',
-    long: 'Dulce Caramelo abre con mandarina y praliné tostado. El corazón de caramelo y flor de cerezo es el centro de esta fragancia golosa, que el haba tonka y la vainilla del fondo vuelven aún más reconfortante.',
-    salida: 'Mandarina, praliné', corazon: 'Caramelo, flor de cerezo', fondo: 'Haba tonka, vainilla'
-  },
-  {
-    id: 'acero-frio', name: 'Acero Frío', cat: 'el', price: 99000,
-    shape: 'cylinder', liquid: '#A9C4D1', cap: '#5C7785',
-    short: 'Frescura deportiva con un fondo limpio y mineral.',
-    long: 'Acero Frío está pensado para el gimnasio y la oficina por igual. La menta y la bergamota de salida dan energía inmediata; lavanda y pimienta sostienen el corazón, y el almizcle gris cierra con un rastro discreto.',
-    salida: 'Menta, bergamota', corazon: 'Lavanda, pimienta', fondo: 'Almizcle gris, vetiver'
-  },
-  {
-    id: 'seda-blanca', name: 'Seda Blanca', cat: 'ella', price: 108000,
-    shape: 'cylinder', liquid: '#F4EEE1', cap: '#BFA98A',
-    short: 'Piel limpia recién salida de la ducha, sin estridencias.',
-    long: 'Seda Blanca busca la sensación de tela recién lavada. El jazmín blanco y el algodón del corazón son suaves casi hasta lo abstracto, y el fondo de almizcle e iris deja una piel perfumada sin saturar.',
-    salida: 'Pera, bergamota', corazon: 'Jazmín blanco, algodón', fondo: 'Almizcle, madera de iris'
-  },
-  {
-    id: 'tierra-salvaje', name: 'Tierra Salvaje', cat: 'unisex', price: 132000,
-    shape: 'square', liquid: '#7A8B4F', cap: '#4A4023',
-    short: 'Especiada y terrosa, para quien no le teme a un perfume con carácter.',
-    long: 'Tierra Salvaje arranca con cardamomo y pimienta rosa antes de revelar un corazón de pachulí intenso. El cuero y el vetiver del fondo firman una fragancia con personalidad, perfecta para quienes buscan algo distinto.',
-    salida: 'Cardamomo, pimienta rosa', corazon: 'Pachulí, geranio', fondo: 'Cuero, vetiver'
-  }
-];
-
 // ----------------------------------------------------------
 // Utilidades de carrito (localStorage compartido con compras.html)
 // ----------------------------------------------------------
@@ -171,6 +98,16 @@ function bottleArt(p) {
   </svg>`;
 }
 
+function artOrImage(p) {
+  if (p.imagen) {
+    return `<img
+            src="../imagenes/productos/${p.imagen}"
+            alt="${p.name}"
+            style="width:100%; height:100%; object-fit:cover; display:block;">`;
+  }
+  return bottleArt(p);
+}
+
 function heartIcon(filled) {
   return `<svg viewBox="0 0 24 24" fill="${filled ? 'currentColor' : 'none'}"
     stroke="currentColor" stroke-width="2">
@@ -238,7 +175,7 @@ function render() {
     card.innerHTML = `
       <div class="cat-card-art"
         style="background: radial-gradient(circle at 35% 28%, ${p.liquid}22, transparent 70%), #1a1410;">
-        ${bottleArt(p)}
+        ${artOrImage(p)}
         <span class="cat-tag ${p.cat}">${CAT_LABEL[p.cat]}</span>
         <button class="cat-fav-btn" aria-pressed="${isFav}"
           aria-label="Guardar ${p.name} en favoritos" data-fav="${p.id}">
@@ -378,5 +315,36 @@ grid.addEventListener('click', e => {
 // ----------------------------------------------------------
 // Arranque
 // ----------------------------------------------------------
-updateBadge();
-render();
+// ── ARRANQUE ──
+let PRODUCTS = [];
+
+async function iniciarCatalogo() {
+  try {
+    const res = await fetch('../php/get_productos.php');
+    const data = await res.json();
+
+    PRODUCTS = data.map(p => ({
+      id: p.id,
+      name: p.name,
+      cat: p.cat,
+      price: parseInt(p.price),
+      shape: p.shape || 'cylinder',
+      liquid: p.liquid || '#D4AF72',
+      cap: p.cap || '#8a6c2a',
+      short: p.short_desc,
+      long: p.long_desc,
+      salida: p.salida,
+      corazon: p.corazon,
+      fondo: p.fondo,
+      imagen: p.imagen || ''
+    }));
+
+  } catch (e) {
+    console.error('Error cargando catálogo:', e);
+  }
+
+  updateBadge();
+  render();
+}
+
+iniciarCatalogo();

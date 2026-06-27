@@ -24,26 +24,37 @@ document.querySelectorAll('.descripcion_principal .ds_izq, .descripcion_principa
 
 
 // btn para subir arriba
-
 const btn_sb = document.getElementById("backtotop");
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
-        btn_sb.classList.add('visible')
-    } else {
-        btn_sb.classList.remove('visible')
-    }
-});
-
-btn_sb.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
+if (btn_sb) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+            btn_sb.classList.add('visible');
+        } else {
+            btn_sb.classList.remove('visible');
+        }
     });
-});
+
+    btn_sb.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+}
 
 function cerrarSesion() {
     localStorage.removeItem("usuario");
     localStorage.removeItem("rol");
     window.location.href = "../Html/index.html";
+}
+
+const paginasProtegidas = ["Landing.html", "catalogo.html", "compras.html", "Admin.html"];
+const paginaActual = window.location.pathname.split("/").pop();
+
+if (paginasProtegidas.includes(paginaActual)) {
+    const usuario = localStorage.getItem("usuario");
+    if (!usuario) {
+        window.location.href = "../Html/index.html";
+    }
 }
