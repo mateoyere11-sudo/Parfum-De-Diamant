@@ -98,7 +98,7 @@ async function guardarProducto() {
             cargarProductosAdmin(); // refresca la tabla del admin
         }
     } catch (e) {
-        console.error("Error real del fetch:", e); // <-- Agrega esto para investigar
+        console.error("Error del fetch:", e);
         mostrarToast('No se pudo conectar con el servidor.');
     }
 }
@@ -190,7 +190,6 @@ async function cargarUsuariosAdmin() {
             const claseEstado = 'pill-green'; 
             const textoEstado = 'Activo';
 
-            // El correo lo simulamos usando su nombre (o si añades la columna correo a tu BD, usas u.correo)
             const correoSimulado = `${u.nombre.toLowerCase().replace(/\s+/g, '')}@email.com`;
 
             fila.innerHTML = `

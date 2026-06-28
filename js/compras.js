@@ -1,11 +1,6 @@
-// =========================================================
-//  compras.js  —  Lógica de la página de carrito
-// =========================================================
-
 const CART_KEY = 'pdd_carrito';
-const WA_NUMBER = '';   // ej: '573001234567'
+const WA_NUMBER = '';
 
-// Mismos datos de productos para regenerar el SVG del frasco
 const PRODUCTS_DATA = {
     'aurum-noir': { liquid: '#C9A227', cap: '#7A5E12', shape: 'hex' },
     'brisa-marina': { liquid: '#7FA0B4', cap: '#4F6B79', shape: 'cylinder' },
@@ -59,7 +54,7 @@ function artOrImage(p) {
             alt="${p.name}"
             style="width:100%; height:100%; object-fit:cover; display:block;">`;
     }
-    return bottleArt(p);
+    return artOrImage(p);
 }
 
 function cartSave(items) {
@@ -179,7 +174,4 @@ document.getElementById('comprasVaciarBtn').addEventListener('click', () => {
     renderCompras();
 });
 
-// ----------------------------------------------------------
-// Arranque
-// ----------------------------------------------------------
 renderCompras();

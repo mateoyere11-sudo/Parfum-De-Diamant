@@ -49,7 +49,7 @@ function cerrarSesion() {
     window.location.href = "../Html/index.html";
 }
 
-const paginasProtegidas = ["Landing.html", "catalogo.html", "compras.html", "Admin.html"];
+const paginasProtegidas = ["Landing.html", "catalogo.html", "nosotros.html", "compras.html", "Admin.html"];
 const paginaActual = window.location.pathname.split("/").pop();
 
 if (paginasProtegidas.includes(paginaActual)) {

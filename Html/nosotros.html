@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Dancing+Script:wght@400..700&display=swap"
+        rel="stylesheet">
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/4.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/nosotros.css">
+    <link rel="shortcut icon" href="../imagenes/logo.png" type="image/x-icon">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-brands/css/uicons-brands.css'>
+    <title>Parfum de diamant | Nosotros</title>
+</head>
+
+<body>
+    <header id="header" class="Cabe">
+        <div class="navegacion">
+            <div class="nomb">
+                <h5>Parfum</h5>
+                <h5 class="Gld">De</h5>
+                <h5>Diamant</h5>
+            </div>
+            <nav class="nav">
+                <a href="Landing.html">Inicio</a>
+                <a href="catalogo.html">Catalogo</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="compras.html" class="nav-active">Compra</a>
+            </nav>
+            <div class="bolsa">
+
+                <div class="cerrar-sesion">
+                    <button type="button" onclick="cerrarSesion()">Cerrar sesión</button>
+                </div>
+                <div class="tema">
+                    <button type="button" onclick="Cambio()"><i class="fi fi-rr-night-day"></i></button>
+                </div>
+                <div class="icono-wrap">
+                    <a href="compras.html">
+                        <i class="fi fi-rr-shopping-bag"></i>
+                        <span class="badge" id="cart-badge">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="bg_t compras-hero">
+            <div class="texto">
+                <h1 class="Titulo">Sobre <em class="Gld">Nosotros</em></h1>
+                <p>Conoce mas sobre nosotros y si deseas conoce mas sobre nuestros productos</p>
+            </div>
+        </div>
+    </header>
+    <main class="princ">
+        <div class="identt">
+            <!-- Identidad -->
+            <h1 class="ident-h1">Nuestra Identidad</h1>
+            <hr><br><br><br>
+            <section class="ident-mis">
+
+                <section class="identidad">
+                    <h1 class="ident-tittle">El arte de la alta perfumeria.</h1>
+
+                    <h5 class="ident-text">"En Parfum de Diamant, entendemos que un perfume es mucho más que una
+                        fragancia:
+                        es
+                        una firma invisible,
+                        una declaración de intenciones y el reflejo más puro de la personalidad. Nacimos con el
+                        propósito de
+                        curar y ofrecer una selección exclusiva de las creaciones olfativas más sofisticadas del mundo,
+                        elevando
+                        el acto de perfumarse a una experiencia sensorial de lujo."</h5>
+                </section>
+
+                <!-- Misión -->
+                <section class="mision">
+                    <h1 class="ident-tittle">Misión</h1>
+                    <h5 class="ident-text">
+                        "Nuestra misión es conectar a cada individuo con su identidad olfativa más auténtica y
+                        sofisticada,
+                        ofreciendo una curaduría excepcional de la alta perfumería mundial. Nos comprometemos a brindar
+                        una
+                        experiencia de lujo accesible mediante un servicio digital impecable, garantizando la máxima
+                        excelencia,
+                        autenticidad y el conocimiento experto en cada una de nuestras fragancias."
+                    </h5>
+                </section>
+            </section>
+        </div>
+
+
+
+
+        <!-- tarjetas de información -->
+        <section class="tar-inf">
+
+            <h1 class="ident-h1">¿Qué nos define?</h1> <br><br><br>
+            <div id="carouselExampleCaptions" class="carousel slide">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="../imagenes/optimizadas/moschino_toy boy.webp" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Curaduría Exclusiva</h5>
+                            <p>Trabajamos solo con piezas icónicas y de vanguardia, garantizando autenticidad y
+                                excelencia en cada botella.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../imagenes/optimizadas/one_million_2.webp" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Pasión por el Detalle</h5>
+                            <p>Estudiamos las familias olfativas, los contrastes y las transiciones de cada nota para
+                                guiarte de manera experta hacia tu fragancia ideal.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../imagenes/optimizadas/valentino_2.webp" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Elegancia Sostenible</h5>
+                            <p>Creemos en un lujo sofisticado, donde la experiencia de compra en línea sea tan impecable
+                                y pulida como el aroma que recibes en tu puerta.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+            <h2>"No vendemos aromas; embotellamos identidades, recuerdos y el brillo único de quienes se atreven a
+                destacar."</h2>
+        </section>
+
+        <footer>
+            <div class="redes">
+                <h3>Contactenos</h3>
+                <div class="as_f">
+                    <div class="redes_a1">
+                        <a href=""><i class="fi fi-brands-facebook"> Facebook</i></a>
+                        <a href=""><i class="fi fi-brands-instagram"> Instagram</i></a>
+                    </div>
+
+                    <div class="redes_a2">
+                        <a href=""><i class="fi fi-brands-tiktok-circle"> Tik Tok</i></i></a>
+                        <a href=""><i class="fi fi-brands-youtube"> Youtube</i></a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="desc_f">
+                <h3>Parfum de Diamant</h3>
+                <p>"En Parfum de Diamant creemos que la fragancia correcta no se busca, se reconoce. Cada esencia de
+                    nuestra colección fue elegida para quienes exigen lo extraordinario."</p>
+                <p>© 2025 Parfum de Diamant. Todos los derechos reservados.</p>
+            </div>
+            <div class="contact">
+                <h3>Contactenos</h3>
+                <p>+57 30034567823</p>
+                <p>Dir: Crr 23 #45 A15</p>
+
+            </div>
+            <div class="hor">
+                <h3>Horarios de atencion.</h3>
+                <ol>
+                    <li>10:00 am</li>
+                    <li>5:00 pm</li>
+                </ol>
+            </div>
+        </footer>
+        <button id="backtotop" aria-label="Volver arriba">
+            ↑
+        </button>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="../js/interactividad.js"></script>
+</body>
+
+</html>
