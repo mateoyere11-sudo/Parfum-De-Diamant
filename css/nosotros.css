@@ -67,3 +67,78 @@ body.modo-oscuro footer {
 body.modo-oscuro .descripcion_principal h1 {
     color: #F0E9DA;
 }
+
+/* pega solo esto al final de tu archivo */
+@media (max-width: 768px) {
+    .ident-h1 {
+        font-size: 3.5rem;
+    }
+
+    .ident-tittle {
+        font-size: 2.2rem;
+    }
+
+    .ident-text {
+        font-size: 1.3rem;
+        width: 100%;
+        padding: 0 16px;
+    }
+
+    .ident-mis {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .identidad,
+    .mision {
+        width: 100%;
+        margin: 30px 16px;
+    }
+
+    .identt {
+        margin: 30px 0;
+    }
+
+    .tar-inf {
+        margin: 40px 16px;
+        max-width: 100%;
+    }
+
+    .carousel-caption {
+        display: block !important;
+        position: relative;
+        padding: 12px 8px;
+        background: rgba(26, 20, 16, 0.85);
+        border-radius: 0 0 20px 20px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .carousel-caption h5 {
+        font-size: 1rem;
+    }
+
+    .carousel-caption p {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .ident-h1 {
+        font-size: 2.8rem;
+    }
+
+    .ident-tittle {
+        font-size: 1.8rem;
+    }
+
+    .ident-text {
+        font-size: 1.1rem;
+    }
+
+    .tar-inf h2 {
+        font-size: 1.2rem;
+        padding: 0 12px;
+    }
+}
