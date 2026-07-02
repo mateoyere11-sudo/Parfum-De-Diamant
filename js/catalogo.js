@@ -18,6 +18,8 @@ function cartSave(items) {
   localStorage.setItem(CART_KEY, JSON.stringify(items));
 }
 
+// Aqui se prepara el envio de la tarjeta a la pagina de compras
+
 function cartAdd(productId) {
   const items = cartLoad();
   const existing = items.find(i => i.id === productId);
@@ -25,7 +27,7 @@ function cartAdd(productId) {
     existing.qty += 1;
   } else {
     const p = PRODUCTS.find(p => p.id === productId);
-    items.push({ id: p.id, name: p.name, price: p.price, imagen: p.imagen, qty: 1 });
+    items.push({ id: p.id, name: p.name, price: p.price, imagen: p.imagen, qty: 1 }); // Envia: ID, Nombre, precio, imagen(arte de ejemplo por si no hay imagen), cantidad por defecto en 1
   }
   cartSave(items);
   updateBadge();
