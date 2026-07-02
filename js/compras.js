@@ -54,7 +54,7 @@ function artOrImage(p) {
             alt="${p.name}"
             style="width:100%; height:100%; object-fit:cover; display:block;">`;
     }
-    return artOrImage(p);
+    return miniBottle(p.id);
 }
 
 function cartSave(items) {
@@ -105,7 +105,7 @@ function renderCompras() {
     lista.innerHTML = items.map(item => `
     <div class="compras-item" data-id="${item.id}">
       <div class="compras-item-art">
-        ${artOrImage(p)}
+        ${artOrImage(item)}
       </div>
       <div class="compras-item-info">
         <p class="compras-item-name">${item.name}</p>

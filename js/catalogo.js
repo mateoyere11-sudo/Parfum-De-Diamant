@@ -25,7 +25,7 @@ function cartAdd(productId) {
     existing.qty += 1;
   } else {
     const p = PRODUCTS.find(p => p.id === productId);
-    items.push({ id: p.id, name: p.name, price: p.price, qty: 1 });
+    items.push({ id: p.id, name: p.name, price: p.price, imagen: p.imagen, qty: 1 });
   }
   cartSave(items);
   updateBadge();
